@@ -1,0 +1,47 @@
+import os
+
+# Dataset paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = "data"
+DATASET= "pr0mila-gh0sh/MediBeng"
+TRAIN_DATASET_PATH = os.path.join(DATA_DIR, "train_dataset")
+TEST_DATASET_PATH = os.path.join(DATA_DIR, "test_dataset")
+
+# Model configuration
+
+# 修改为：
+# config/config.py
+# config/config.py
+MODEL_NAME = "D:/实训/机器翻译/MediBeng-Whisper-Tiny-main/models/whisper-tiny"  # 绝对路径，确保正确# 替换为你的本地路径
+LANGUAGE = "English"
+TASK = "translate"
+
+# Training configuration
+OUTPUT_DIR = "MediBeng-Whisper-Tiny"
+TRAIN_BATCH_SIZE = 1
+EVAL_BATCH_SIZE = 1
+LEARNING_RATE = 1e-5
+WARMUP_STEPS = 50
+MAX_STEPS = 500
+GRADIENT_ACCUMULATION_STEPS = 1
+SAVE_STEPS = 50
+EVAL_STEPS = 50
+LOGGING_STEPS = 25
+GENERATION_MAX_LENGTH = 225
+
+# Audio configuration
+SAMPLING_RATE = 16000 
+
+# Hugging Face Repository Name
+REPO_ID = "openai/whisper-tiny"
+
+# Test audio files to test the model 
+
+TEST_AUDIO_FILES = [
+    "data/Female-Bengali-English-2045.wav",
+    "data/Female-Bengali-English-2065.wav",
+    "data/Female-Bengali-English-2072.wav",
+    "data/Male-Bengali-English-1959.wav",
+    "data/Male-Bengali-English-2372.wav",
+    "data/Male-Bengali-English-2338.wav"
+]
